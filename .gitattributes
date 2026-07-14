@@ -1,0 +1,2 @@
+# Keep GitHub Linguist's language summary focused on the project source.
+*.py linguist-language=Python
