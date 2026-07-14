@@ -1,0 +1,17 @@
+[Unit]
+Description=APRS to Swarm arrival helper
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Documents/Coding/APRSSwarmCheckin
+EnvironmentFile=%h/.config/aprs-swarm-checkin.env
+ExecStart=%h/Documents/Coding/APRSSwarmCheckin/.venv/bin/python %h/Documents/Coding/APRSSwarmCheckin/watcher.py --config %h/.config/aprs-swarm-checkin.env
+Restart=always
+RestartSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target
